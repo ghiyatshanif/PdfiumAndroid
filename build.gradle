@@ -60,6 +60,11 @@ android {
             jniLibs.srcDir 'src/main/jni'
         }
     }
+    externalNativeBuild {
+        ndkBuild {
+            path file('src/main/jni/Android.mk')
+        }
+    }
 }
 
 repositories {
