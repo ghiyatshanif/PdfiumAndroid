@@ -34,6 +34,8 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/lib/$(ARCH_PATH)/libmodpng.so
 
 include $(PREBUILT_SHARED_LIBRARY)
 
+
+
 #Main JNI library
 include $(CLEAR_VARS)
 LOCAL_MODULE := jniPdfium
@@ -41,6 +43,8 @@ LOCAL_MODULE := jniPdfium
 LOCAL_CFLAGS += -DHAVE_PTHREADS
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
 LOCAL_SHARED_LIBRARIES += aospPdfium
+LOCAL_SHARED_LIBRARIES += libmodpng
+LOCAL_SHARED_LIBRARIES += libmodft2
 LOCAL_LDLIBS += -llog -landroid -ljnigraphics
 
 LOCAL_SRC_FILES :=  $(LOCAL_PATH)/src/mainJNILib.cpp
